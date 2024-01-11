@@ -27,7 +27,7 @@ public class BaseExceptionHandler {
 
 
     @ExceptionHandler(OtpException.class)
-    public ResponseEntity<ErrorResponse> commonException(OtpException ex) {
+    public ResponseEntity<ErrorResponse> otpException(OtpException ex) {
         var errorResponse = new ErrorResponse(ex.getError());
         return ResponseEntity.status(ex.getError().getStatus()).body(errorResponse);
     }
